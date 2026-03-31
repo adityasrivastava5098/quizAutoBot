@@ -163,4 +163,4 @@ quiz-ai-assistant/
 
 ---
 
-*Made with ❤️ — questions, issues or improvements? Rebuild it with Claude at claude.ai*
+
