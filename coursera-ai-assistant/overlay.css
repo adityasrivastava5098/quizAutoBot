@@ -1,0 +1,67 @@
+/* overlay.css — injected into Coursera pages */
+
+#cai-panel {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 999999;
+  width: 320px;
+  max-height: 480px;
+  background: #0a0a0f;
+  border: 1px solid #2a2a3e;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(124,106,247,0.2);
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 13px;
+  color: #e8e8f0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: caiSlideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes caiSlideIn {
+  from { opacity: 0; transform: translateX(30px) scale(0.95); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+.cai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #1a1030, #0f1a30);
+  border-bottom: 1px solid #1e1e2e;
+  cursor: grab;
+  user-select: none;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+.cai-header:active { cursor: grabbing; }
+
+.cai-close {
+  background: none;
+  border: none;
+  color: #6b6b80;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.cai-close:hover {
+  color: #e8e8f0;
+  background: rgba(255,255,255,0.1);
+}
+
+.cai-body {
+  padding: 14px 16px;
+  overflow-y: auto;
+  flex: 1;
+  line-height: 1.7;
+}
+
+.cai-body::-webkit-scrollbar { width: 4px; }
+.cai-body::-webkit-scrollbar-track { background: transparent; }
+.cai-body::-webkit-scrollbar-thumb { background: #2a2a3e; border-radius: 2px; }

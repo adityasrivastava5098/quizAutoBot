@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Quiz AI Assistant",
+  "version": "3.0.0",
+  "description": "Universal AI assistant for Coursera, Google Forms and Microsoft Forms quizzes",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://*.coursera.org/*",
+    "https://docs.google.com/*",
+    "https://forms.office.com/*",
+    "https://forms.microsoft.com/*",
+    "https://api.anthropic.com/*",
+    "https://api.openai.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.groq.com/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.coursera.org/*",
+        "https://docs.google.com/forms/*",
+        "https://forms.office.com/*",
+        "https://forms.microsoft.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["overlay.css"]
+    }
+  ],
+  "background": { "service_worker": "background.js" },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
